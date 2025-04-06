@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HelpHub - Charity Profile</title>
+  <style>
+    #volunteerForm {
+      display: none;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 300px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Charity Profile</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="charity-list.html">Charity List</a> |
+      <a href="charity-profile.html">Charity Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Charity of Choice</h2>
+      <p>This charity is dedicated to helping communities with essential services.</p>
+      <ul>
+        <li>Food drives</li>
+        <li>Education support</li>
+        <li>Emergency relief</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Volunteer with Us</h2>
+      <button onclick="toggleForm()">Volunteer Now!</button>
+
+      <div id="volunteerForm">
+        <form action="submit-form.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required>
+
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById("volunteerForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
