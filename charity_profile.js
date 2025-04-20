@@ -1,25 +1,39 @@
-// Event listener for the Volunteer button
-document.getElementById("volunteerBtn").addEventListener("click", function () {
-  const form = document.getElementById("volunteerForm");
-  form.style.display = form.style.display === "none" ? "block" : "none";
-});
+// Toggle form visibility
+document.addEventListener("DOMContentLoaded", () => {
+  const volunteerBtn = document.getElementById("volunteerBtn");
+  const formDiv = document.getElementById("volunteerForm");
+  formDiv.style.display = "none"; // Hide initially
 
-// Additional interactivity: Show charity description on hover
-const charityTitle = document.getElementById("charityTitle"); // Add this ID to a header or div
+  volunteerBtn.addEventListener("click", () => {
+    formDiv.style.display = formDiv.style.display === "none" ? "block" : "none";
+  });
 
-const descriptionBox = document.createElement("div");
-descriptionBox.textContent = "We help communities by providing food, shelter, and education.";
-descriptionBox.style.display = "none";
-descriptionBox.style.border = "1px solid #ccc";
-descriptionBox.style.padding = "10px";
-descriptionBox.style.backgroundColor = "#f9f9f9";
+  // Add interactive detail on hover
+  const detailBox = document.createElement("div");
+  detailBox.textContent = "Hover over services to learn more!";
+  detailBox.style.marginTop = "10px";
+  detailBox.style.padding = "10px";
+  detailBox.style.border = "1px dashed #aaa";
+  detailBox.style.backgroundColor = "#f0f0f0";
+  detailBox.style.display = "none";
 
-charityTitle.appendChild(descriptionBox);
+  const servicesList = document.querySelector("ul");
+  servicesList.parentNode.appendChild(detailBox);
 
-charityTitle.addEventListener("mouseenter", () => {
-  descriptionBox.style.display = "block";
-});
+  servicesList.addEventListener("mouseenter", () => {
+    detailBox.style.display = "block";
+  });
 
-charityTitle.addEventListener("mouseleave", () => {
-  descriptionBox.style.display = "none";
+  servicesList.addEventListener("mouseleave", () => {
+    detailBox.style.display = "none";
+  });
+
+  // Add a dynamic motivational quote at the top
+  const header = document.querySelector("header");
+  const quote = document.createElement("p");
+  quote.textContent = "“The best way to find yourself is to lose yourself in the service of others.” – Mahatma Gandhi";
+  quote.style.fontStyle = "italic";
+  quote.style.textAlign = "center";
+  quote.style.marginTop = "10px";
+  header.appendChild(quote);
 });
