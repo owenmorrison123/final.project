@@ -1,43 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const eventsContainer = document.getElementById("eventsContainer");
-  const errorMessage = document.getElementById("error");
+  const apiKey = "YOUR_API_KEY_HERE"; // <-- replace with your real API key
+  const projectsContainer = document.getElementById("projects-container");
 
-  // Example API endpoint (you can replace this with a real one)
-  const API_URL = "https://api.sampleapis.com/volunteering/events";
-
-  fetch(API_URL)
+  fetch("https://api.globalgiving.org/api/public/projectservice/all/projects?api_key=" + apiKey)
     .then(response => {
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Network response was not ok " + response.statusText);
       }
       return response.json();
     })
     .then(data => {
-      if (!data.length) {
-        eventsContainer.innerHTML = "<p>No upcoming events found.</p>";
-        return;
-      }
-
-      data.forEach(event => {
-        const eventCard = document.createElement("div");
-        eventCard.style.border = "1px solid #ccc";
-        eventCard.style.margin = "10px 0";
-        eventCard.style.padding = "15px";
-        eventCard.style.borderRadius = "8px";
-        eventCard.style.backgroundColor = "#fff";
-
-        eventCard.innerHTML = `
-          <h2>${event.title}</h2>
-          <p><strong>Date:</strong> ${event.date}</p>
-          <p><strong>Location:</strong> ${event.location}</p>
-          <p>${event.description}</p>
+      const projects = data.projects.project.slice(0, 5); // Just show 5 projects
+      projects.forEach(project => {
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("project-card");
+        projectDiv.innerHTML = `
+          <h3>${project.title}</h3>
+          <p>${project.summary}</p>
+          <a href="${project.projectLink}" target="_blank">Learn More</a>
         `;
-
-        eventsContainer.appendChild(eventCard);
+        projectsContainer.appendChild(projectDiv);
       });
     })
     .catch(error => {
       console.error("Fetch error:", error);
-      errorMessage.style.display = "block";
+      projectsContainer.innerHTML = "<p>Sorry, we couldn't load projects right now. Please try again later.</p>";
     });
 });
