@@ -1,29 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>Charity List</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fafafa;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 15px 0;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 36px;
+      color: #333;
+    }
+
+    .charity-buttons {
+      margin: 30px 0;
+    }
+
+    .charity-buttons button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .charity-buttons button:hover {
+      background-color: #45a049;
+    }
+
+    .charity-image img {
+      margin: 30px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #4CAF50;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #45a049;
+    }
+  </style>
 </head>
+
 <body>
-  <nav style="background-color: #f2f2f2; padding: 10px; text-align: center;">
-    <a href="index.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
-    <a href="charities.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Charity List</a>
-    <a href="charity_profile.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Charity Profile</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="charities.html">Charity List</a>
+    <a href="charity_profile.html">Charity Profile</a>
   </nav>
 
   <h1>Charities List</h1>
 
-  <div>
-    <button>Charity 1</button><br>
-    <button>Charity 2</button><br>
+  <div class="charity-buttons">
+    <button>Charity 1</button>
+    <button>Charity 2</button>
     <button>Charity 3</button>
   </div>
 
-  <div>
-    <img src="image2.jpg" alt="Charity image" width="300">
+  <div class="charity-image">
+    <img src="image2.jpg" alt="Charity image">
   </div>
 
-  <a href="index.html">Back to Home</a>
+  <a class="back-link" href="index.html">← Back to Home</a>
+
 </body>
 </html>
