@@ -3,33 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <title>HelpHub - Welcome</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Add CSS link here -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fafafa;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 15px 0;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 36px;
+      color: #4CAF50;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .links-section {
+      margin: 30px 0;
+    }
+
+    .links-section a {
+      display: inline-block;
+      margin: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .links-section a:hover {
+      background-color: #45a049;
+    }
+
+    img {
+      margin-top: 40px;
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
 </head>
+
 <body>
-  <nav style="background-color: #f2f2f2; padding: 10px; text-align: center;">
-    <a href="index.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
-    <a href="charities.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Charity List</a>
-    <a href="charity_profile.html" style="margin: 0 15px; text-decoration: none; font-weight: bold;">Charity Profile</a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="charities.html">Charity List</a>
+    <a href="charity_profile.html">Charity Profile</a>
   </nav>
 
-  <h1>Welcome!</h1>
+  <h1>Welcome to HelpHub!</h1>
+
   <p>
-    At HelpHub we strive to get the community to volunteer and help charities.
-    Our local volunteers are passionate about charity and the work we do.
+    At HelpHub, we strive to inspire the community to volunteer and support local charities.
+    Our dedicated volunteers are passionate about making a difference!
   </p>
 
-  <div>
-    <a href="charity-list.html" </a>
-    <p>Here you can find a list of the charities we partner with.</p>
-  </div>
-
-  <div>
-    <a href="charity-profile.html"</a>
-    <p>Here is a descriptive bio of the charities.</p>
+  <div class="links-section">
+    <a href="charities.html">View Our Charity Partners</a>
+    <a href="charity_profile.html">Learn More About Each Charity</a>
   </div>
 
   <div>
     <img src="charity 2.jpg" alt="Charity related image" width="300">
   </div>
+
 </body>
 </html>
