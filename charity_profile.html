@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>HelpHub - Charity Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fafafa;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+
+    header {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    header h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    ul {
+      list-style: disc inside;
+      padding: 0;
+    }
+
+    #volunteerBtn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    #volunteerBtn:hover {
+      background-color: #45a049;
+    }
+
+    #volunteerForm {
+      display: none;
+      margin-top: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
+
 <body>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="charities.html">Charity List</a>
@@ -29,7 +140,7 @@
 
     <section>
       <h2>Volunteer with Us</h2>
-     <button id="volunteerBtn">Volunteer Now!</button>
+      <button id="volunteerBtn">Volunteer Now!</button>
 
       <div id="volunteerForm">
         <form action="submit-form.php" method="post">
@@ -55,11 +166,18 @@
   </main>
 
   <script>
-    function toggleForm() {
-      const form = document.getElementById("volunteerForm");
-      form.style.display = form.style.display === "none" ? "block" : "none";
-    }
+    // Wait for the DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+      const volunteerBtn = document.getElementById('volunteerBtn');
+      const volunteerForm = document.getElementById('volunteerForm');
+
+      volunteerBtn.addEventListener('click', function() {
+        volunteerForm.style.display = volunteerForm.style.display === 'none' || volunteerForm.style.display === '' 
+          ? 'block' 
+          : 'none';
+      });
+    });
   </script>
-  <script src="charity_profile.js"></script>
+
 </body>
 </html>
